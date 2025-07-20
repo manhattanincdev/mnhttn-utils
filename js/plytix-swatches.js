@@ -60,19 +60,27 @@ const bodyObserver = new MutationObserver(function(mutationsList){
 });
 bodyObserver.observe(document.body, { childList: true, subtree: true });
 
+// Shared observer callback for childList mutations
+const swatchMutationCallback = function(tagMutations){
+  for(const m of tagMutations){
+    if(m.type === 'childList' && (m.addedNodes.length > 0)){
+      applyPlytixSwatches();
+    }
+  }
+};
+
 // Product: Recommendations
 const recommendations = document.querySelector('product-recommendations');
-
 if(recommendations){
-  const tagObserver = new MutationObserver(function(tagMutations){
-    for(const m of tagMutations){
-      if(m.type === 'childList' && (m.addedNodes.length > 0)){
-        applyPlytixSwatches();
-      }
-    }
-  });
+  const tagObserver = new MutationObserver(swatchMutationCallback);
   tagObserver.observe(recommendations, { childList: true, subtree: true });
-  applyPlytixSwatches();
+}
+
+// Search: Full search results at /search
+const search = document.querySelector('search-result-panel');
+if(search){
+  const tagObserver = new MutationObserver(swatchMutationCallback);
+  tagObserver.observe(search, { childList: true, subtree: true });
 }
 
 // Utils: Event listeners
