@@ -21,7 +21,7 @@ Theme: Stretch by Maestrooo
 `Line 200` of `snippets/option-value.liquid`
 
 ```
-data-plytix-swatch="{{ label }}" {% if variant.metafields.ky_custom.hex_1 %}data-plytix-hex1="{{ variant.metafields.ky_custom.hex_1 }}"{% endif %} {% if variant.metafields.ky_custom.hex_2 %}data-plytix-hex2="{{ variant.metafields.ky_custom.hex_2 }}"{% endif %} {% if variant.metafields.ky_custom.swatch %}data-plytix-img="{{ variant.metafields.ky_custom.swatch }}"{% endif %}
+data-plytix-swatch="{{ label }}" {% if variant.metafields.plytix.hex_1 %}data-plytix-hex1="{{ variant.metafields.plytix.hex_1 }}"{% endif %} {% if variant.metafields.plytix.hex_2 %}data-plytix-hex2="{{ variant.metafields.plytix.hex_2 }}"{% endif %} {% if variant.metafields.plytix.swatch %}data-plytix-img="{{ variant.metafields.plytix.swatch }}"{% endif %}
 ```
 
 ## Pure & Simple
