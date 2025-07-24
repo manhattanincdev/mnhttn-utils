@@ -84,6 +84,13 @@ if(search){
   tagObserver.observe(search, { childList: true, subtree: true });
 }
 
+// Inline: Quick Add to Cart
+const modal = document.querySelector('quick-cart-drawer');
+if(modal){
+ const tagObserver = new MutationObserver(swatchMutationCallback);
+ tagObserver.observe(modal, { childList: true, subtree: true });
+}
+
 // Utils: Event listeners
 document.addEventListener('DOMContentLoaded', applyPlytixSwatches);
 document.addEventListener('variant:change', applyPlytixSwatches);
