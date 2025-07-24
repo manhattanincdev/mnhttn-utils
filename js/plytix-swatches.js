@@ -18,7 +18,7 @@ function applyPlytixSwatches(){
 }
         
 // Global: Quick search
-const quickSearch = document.querySelectorAll('#search-drawer-input');
+const quickSearch = document.querySelectorAll('#search-drawer-input, predictive-search');
 if(quickSearch && quickSearch.length){
   quickSearch.forEach(function(el){ 
     el.addEventListener('input', function(){
@@ -31,7 +31,6 @@ if(quickSearch && quickSearch.length){
 
 // Collection: Elements being added
 const tagsToWatch = ['quick-buy-modal', 'product-render'];
-
 const bodyObserver = new MutationObserver(function(mutationsList){
   for(const mutation of mutationsList){
     if(mutation.type === 'childList'){
@@ -69,11 +68,13 @@ const swatchMutationCallback = function(tagMutations){
   }
 };
 
-// Product: Recommendations
-const recommendations = document.querySelector('product-recommendations');
+// Product: Recommendations and complementary products
+const recommendations = document.querySelectorAll('product-recommendations, complementary-products, card-product-slider');
 if(recommendations){
-  const tagObserver = new MutationObserver(swatchMutationCallback);
-  tagObserver.observe(recommendations, { childList: true, subtree: true });
+  recommendations.forEach(function(el){
+    const tagObserver = new MutationObserver(swatchMutationCallback);
+    tagObserver.observe(el, { childList: true, subtree: true });
+  });
 }
 
 // Search: Full search results at /search

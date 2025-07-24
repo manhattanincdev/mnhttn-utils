@@ -37,7 +37,7 @@ Note: Pure & Simple is not currently using swatches on the product page.
 {% else %}
     {% if option.position == 1 %}
         {% assign label_hidden = true %}
-        <span class="swatch product-option__swatch product-option__swatch--{{ swatch_shape }}" data-plytix-swatch="{{ value }}" data-plytix-hex1="{{ value.variant.metafields.plytix.hex_1 }}" data-plytix-hex2="{{ value.variant.metafields.plytix.hex_2 }}" data-plytix-img="{{ value.variant.metafields.plytix.swatch }}"></span>
+        <span class="swatch product-option__swatch product-option__swatch--{{ swatch_shape }}" data-plytix-swatch="{{ value }}" {% if value.variant.metafields.plytix.hex_1 %}data-plytix-hex1="{{ value.variant.metafields.plytix.hex_1 }}"{% endif %} {% if value.variant.metafields.plytix.hex_2 %}data-plytix-hex2="{{ value.variant.metafields.plytix.hex_2 }}"{% endif %} {% if value.variant.metafields.plytix.swatch %}data-plytix-img="{{ value.variant.metafields.plytix.swatch }}"{% endif %}></span>
     {% endif %}
 {% comment %}END Manhattan Custom; DO NOT DELETE{% endcomment %}
 ```
