@@ -8,7 +8,7 @@ Place the following snippet before the closing `</body>` tag for every brand:
 
 ```
 {% comment %}Manhattan Custom; DO NOT DELETE{% endcomment %}
-<script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils/js/plytix-swatches.js"></script>
+<script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils@latest/js/plytix-swatches.min.js"></script>
 {% comment %}END Manhattan Custom; DO NOT DELETE{% endcomment %}
 ```
 

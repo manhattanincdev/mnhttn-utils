@@ -4,15 +4,18 @@ function applyPlytixSwatches(){
     const hex2 = el.dataset.plytixHex2;
     const img = el.dataset.plytixImg;
 
-    if(hex1){
-      el.style.backgroundColor = hex1;
-    }
-    if(hex2){
-      el.style.background = `linear-gradient(-45deg, ${hex2} 50%, ${hex1} 50%)`;
-    }
     if(img){
-      el.style.backgroundImage = `url(${img})`;
-      el.style.backgroundSize = 'cover';
+      if(hex1 && hex2){
+        el.style.background = `linear-gradient(-45deg, ${hex2} 50%, ${hex1} 50%), url(${img}) no-repeat center/cover`;
+      } else if(hex1){
+        el.style.background = `${hex1} url(${img}) no-repeat center/cover`;
+      } else {
+        el.style.background = `url(${img}) no-repeat center/cover`;
+      }
+    } else if(hex1 && hex2){
+      el.style.background = `linear-gradient(-45deg, ${hex2} 50%, ${hex1} 50%)`;
+    } else if(hex1){
+      el.style.background = hex1;
     }
   });
 }
