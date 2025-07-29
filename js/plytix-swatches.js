@@ -71,28 +71,26 @@ const swatchMutationCallback = function(tagMutations){
   }
 };
 
-// Product: Recommendations and complementary products
-const recommendations = document.querySelectorAll('product-recommendations, complementary-products, card-product-slider');
-if(recommendations){
-  recommendations.forEach(function(el){
+// Helper function for observing swatch mutations
+function observeSwatchMutations(selector) {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach(function(el){
     const tagObserver = new MutationObserver(swatchMutationCallback);
     tagObserver.observe(el, { childList: true, subtree: true });
   });
 }
 
+// Product: Recommendations and complementary products
+observeSwatchMutations('product-recommendations, complementary-products, card-product-slider');
+
 // Search: Full search results at /search
-const search = document.querySelector('search-result-panel');
-if(search){
-  const tagObserver = new MutationObserver(swatchMutationCallback);
-  tagObserver.observe(search, { childList: true, subtree: true });
-}
+observeSwatchMutations('search-result-panel');
 
 // Inline: Quick Add to Cart
-const modal = document.querySelector('quick-cart-drawer');
-if(modal){
- const tagObserver = new MutationObserver(swatchMutationCallback);
- tagObserver.observe(modal, { childList: true, subtree: true });
-}
+observeSwatchMutations('quick-cart-drawer');
+
+// Collections: Pagination
+observeSwatchMutations('.shopify-section--main-collection');
 
 // Utils: Event listeners
 document.addEventListener('DOMContentLoaded', applyPlytixSwatches);
