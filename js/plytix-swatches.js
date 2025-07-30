@@ -6,7 +6,7 @@ function applyPlytixSwatches(){
 
     if(img){
       if(hex1 && hex2){
-        el.style.background = `linear-gradient(-45deg, ${hex2} 50%, ${hex1} 50%), url(${img}) no-repeat center/cover`;
+        el.style.background = `url(${img}) no-repeat center/cover, linear-gradient(-45deg, ${hex2} 50%, ${hex1} 50%)`;
       } else if(hex1){
         el.style.background = `${hex1} url(${img}) no-repeat center/cover`;
       } else {
