@@ -26,6 +26,9 @@ For versioning, the `main` branch is equal to `@latest` version which auto-updat
 <script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils@releases/v1/js/plytix-swatches.min.js"></script>
 ```
 
+### jsDelivr Cache
+When updating a given branch, you can force jsDelivr to purge the cache by entering the urls here: [Purge jsDelivr CDN cache](https://www.jsdelivr.com/tools/purge)
+
 ## 2. Theme specific snippets
 
 ## Kyodan
