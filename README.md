@@ -23,8 +23,7 @@ Place the following snippet before the closing `</body>` tag for every brand:
 
 For versioning, the `main` branch is the latest version which auto-updates, and may break. Stable versions being stored in `releases/vX`:
 ```
-<script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils/releases/v1/js/plytix-swatches.min.js"></script>
-
+<script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils@releases/v1/js/plytix-swatches.min.js"></script>
 ```
 
 ## 2. Theme specific snippets
