@@ -4,6 +4,12 @@ function applyPlytixSwatches(){
     const hex2 = el.dataset.plytixHex2;
     const img = el.dataset.plytixImg;
 
+    if(!hex1 && typeof plytixColorCache !== 'undefined' && plytixColorCache && plytixColorCache[el.dataset.plytixSwatch]){
+      hex1 = plytixColorCache[el.dataset.plytixSwatch][0];
+      hex2 = plytixColorCache[el.dataset.plytixSwatch][1];
+      img = plytixColorCache[el.dataset.plytixSwatch][2];
+    }
+
     if(img){
       if(hex1 && hex2){
         el.style.background = `url(${img}) no-repeat center/cover, linear-gradient(-45deg, ${hex2} 50%, ${hex1} 50%)`;
