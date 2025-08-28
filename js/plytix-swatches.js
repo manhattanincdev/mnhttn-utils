@@ -1,8 +1,8 @@
 function applyPlytixSwatches(){        
   document.querySelectorAll('[data-plytix-swatch]').forEach(function(el){
-    const hex1 = el.dataset.plytixHex1;
-    const hex2 = el.dataset.plytixHex2;
-    const img = el.dataset.plytixImg;
+    let hex1 = el.dataset.plytixHex1;
+    let hex2 = el.dataset.plytixHex2;
+    let img = el.dataset.plytixImg;
 
     if(!hex1 && typeof plytixColorCache !== 'undefined' && plytixColorCache && plytixColorCache[el.dataset.plytixSwatch]){
       hex1 = plytixColorCache[el.dataset.plytixSwatch][0];
