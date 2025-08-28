@@ -8,8 +8,23 @@ Place the following snippet before the closing `</body>` tag for every brand:
 
 ```
 {% comment %}Manhattan Custom; DO NOT DELETE{% endcomment %}
+<script>
+    let plytixColorCache = {};
+
+    {% assign variants = product.variants %}
+    {% for variant in variants %}
+        var row = ['{{ variant.metafields.plytix.hex_1 }}', '{{ variant.metafields.plytix.hex_2 }}', '{{ variant.metafields.plytix.hex_2 }}'];
+        plytixColorCache['{{ variant.option1 }}'] = row;
+    {% endfor %}
+</script>
 <script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils@latest/js/plytix-swatches.min.js"></script>
 {% comment %}END Manhattan Custom; DO NOT DELETE{% endcomment %}
+```
+
+For versioning, the `main` branch is the latest version which auto-updates, and may break. Stable versions being stored in `releases/vX`:
+```
+<script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils/releases/v1/js/plytix-swatches.min.js"></script>
+
 ```
 
 ## 2. Theme specific snippets
