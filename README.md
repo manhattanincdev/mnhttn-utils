@@ -13,7 +13,7 @@ Place the following snippet before the closing `</body>` tag for every brand:
 
     {% assign variants = product.variants %}
     {% for variant in variants %}
-        var row = ['{{ variant.metafields.plytix.hex_1 }}', '{{ variant.metafields.plytix.hex_2 }}', '{{ variant.metafields.plytix.hex_2 }}'];
+        var row = ['{{ variant.metafields.plytix.hex_1 }}', '{{ variant.metafields.plytix.hex_2 }}', '{{ variant.metafields.plytix.swatch }}'];
         plytixColorCache['{{ variant.option1 }}'] = row;
     {% endfor %}
 </script>
@@ -21,7 +21,7 @@ Place the following snippet before the closing `</body>` tag for every brand:
 {% comment %}END Manhattan Custom; DO NOT DELETE{% endcomment %}
 ```
 
-For versioning, the `main` branch is the latest version which auto-updates, and may break. Stable versions being stored in `releases/vX`:
+For versioning, the `main` branch is equal to `@latest` version which auto-updates, and may break. Stable versions being stored in `releases/vX`:
 ```
 <script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils@releases/v1/js/plytix-swatches.min.js"></script>
 ```
