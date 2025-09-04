@@ -100,4 +100,4 @@ observeSwatchMutations('.shopify-section--main-collection');
 
 // Utils: Event listeners
 document.addEventListener('DOMContentLoaded', applyPlytixSwatches);
-document.addEventListener('variant:change', applyPlytixSwatches);
+document.addEventListener('change', applyPlytixSwatches);
