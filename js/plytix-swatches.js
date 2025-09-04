@@ -98,6 +98,9 @@ observeSwatchMutations('quick-cart-drawer');
 // Collections: Pagination
 observeSwatchMutations('.shopify-section--main-collection');
 
+// Collections: Filters
+observeSwatchMutations('.collection__container');
+
 // Utils: Event listeners
 document.addEventListener('DOMContentLoaded', applyPlytixSwatches);
 document.addEventListener('change', applyPlytixSwatches);
