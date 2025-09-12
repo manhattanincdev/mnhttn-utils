@@ -45,7 +45,7 @@ data-plytix-swatch="{{ label }}" {% if variant.metafields.plytix.hex_1 %}data-pl
 
 Theme: Release by DigiFist
 
-`Line 145` of `snippets/product-option.liquid`
+`Line 148` of `snippets/product-option.liquid`
 
 Note: Pure & Simple is not currently using swatches on the product page.
 
