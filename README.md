@@ -63,9 +63,9 @@ Note: Pure & Simple is not currently using swatches on the product page.
 
 Theme: Monochrome by Superfine
 
-Note: This theme uses CSS :after to apply the swatches, therefore the usual JS script must be ommited from `theme.liquid`.
+Note: This theme uses CSS :after to apply the swatches, therefore the usual JS script must be ommited from `theme.liquid`. The upgrade from v1.0.6 to v1.1.0 custom the swatch functions, below is the is updated instructions:
 
-Add the `data-plytix-swatch="{{ value }}"` attribute to `Line 144`, `Line 269`, and `Line 366`, (or all the `<label>` tags) of `snippets/product-variant-options.liquid`
+Add the `data-plytix-swatch="{{ value }}"` attribute to `Line 127` and `Line 257` of `snippets/product-variant-options.liquid`
 
 Followed by the following block for each:
 ```
@@ -75,7 +75,7 @@ Followed by the following block for each:
     {%- assign hex2 = current_variant.metafields.plytix.hex_2 -%}
     {%- assign img = current_variant.metafields.plytix.swatch -%}
 
-    .product-form__controls-group label[data-plytix-swatch="{{ value }}"].color-swatch.color-swatch-standart:after {
+    .product-form__controls-group label[data-plytix-swatch="{{ value }}"].color-swatch:after {
         {%- if img -%}
             {%- if hex1 and hex2 -%}
                 background: url({{ img }}) no-repeat center/cover, linear-gradient(-45deg, {{ hex2 }} 50%, {{ hex1 }} 50%);
