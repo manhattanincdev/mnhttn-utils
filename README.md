@@ -69,7 +69,7 @@ Add the `data-plytix-swatch="{{ value }}"` attribute to `Line 127` and `Line 257
 
 Followed by the following block for each:
 ```
-{%- assign current_variant = product.variants | where: "id", variant_id | first -%}
+{%- assign current_variant = product.variants | where: "option1", value | first -%}
 <style>
     {%- assign hex1 = current_variant.metafields.plytix.hex_1 -%}
     {%- assign hex2 = current_variant.metafields.plytix.hex_2 -%}
