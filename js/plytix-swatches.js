@@ -92,6 +92,9 @@ observeSwatchMutations('product-recommendations, complementary-products, card-pr
 // Search: Full search results at /search
 observeSwatchMutations('search-result-panel');
 
+// Search: Predictive search results
+observeSwatchMutations('.js-results-container');
+
 // Search: Drawer
 observeSwatchMutations('div[slot="results"]');
 
