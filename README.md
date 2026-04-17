@@ -63,12 +63,13 @@ Note: Pure & Simple is not currently using swatches on the product page.
 
 Theme: Monochrome by Superfine
 
-Note: This theme uses CSS :after to apply the swatches, therefore the usual JS script must be ommited from `theme.liquid`. The upgrade from v1.0.6 to v1.1.0 custom the swatch functions, below is the is updated instructions:
+Note: This theme uses CSS :after to apply the swatches, therefore the usual JS script must be ommited from `theme.liquid`. The upgrade from v1.0.6 to v1.1.0 broke the custom swatch functions, below is the is updated instructions:
 
-Add the `data-plytix-swatch="{{ value }}"` attribute to `Line 127` and `Line 257` of `snippets/product-variant-options.liquid`
+Add the `data-plytix-swatch="{{ value }}"` attribute to `Line 263` of `snippets/product-variant-options.liquid`
 
 Followed by the following block for each:
 ```
+{% comment %}Manhattan Custom; DO NOT DELETE{% endcomment %}
 {%- assign current_variant = product.variants | where: "option1", value | first -%}
 <style>
     {%- assign hex1 = current_variant.metafields.plytix.hex_1 -%}
@@ -78,17 +79,18 @@ Followed by the following block for each:
     .product-form__controls-group label[data-plytix-swatch="{{ value }}"].color-swatch:after {
         {%- if img -%}
             {%- if hex1 and hex2 -%}
-                background: url({{ img }}) no-repeat center/cover, linear-gradient(-45deg, {{ hex2 }} 50%, {{ hex1 }} 50%);
+                background: url({{ img }}) no-repeat center/cover, linear-gradient(-45deg, {{ hex2 }} 50%, {{ hex1 }} 50%) !important;
             {%- elsif hex1 -%}
-                background: {{ hex1 }} url({{ img }}) no-repeat center/cover;
+                background: {{ hex1 }} url({{ img }}) no-repeat center/cover !important;
             {%- else -%}
-                background: url({{ img }}) no-repeat center/cover;
+                background: url({{ img }}) no-repeat center/cover !important;
             {%- endif -%}
         {%- elsif hex1 and hex2 -%}
-            background: linear-gradient(-45deg, {{ hex2 }} 50%, {{ hex1 }} 50%);
+            background: linear-gradient(-45deg, {{ hex2 }} 50%, {{ hex1 }} 50%) !important;
         {%- elsif hex1 -%}
-            background: {{ hex1 }};
+            background: {{ hex1 }} !important;
         {%- endif -%} 
     }
 </style>
+{% comment %}END Manhattan Custom; DO NOT DELETE{% endcomment %}
 ```
