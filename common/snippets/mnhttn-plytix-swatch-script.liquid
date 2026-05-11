@@ -1,0 +1,10 @@
+<script>
+    let plytixColorCache = {};
+
+    {% assign variants = product.variants %}
+    {% for variant in variants %}
+        var row = ['{{ variant.metafields.plytix.hex_1 }}', '{{ variant.metafields.plytix.hex_2 }}', '{{ variant.metafields.plytix.swatch }}'];
+        plytixColorCache['{{ variant.option1 }}'] = row;
+    {% endfor %}
+</script>
+<script id="plytix-gather" src="https://cdn.jsdelivr.net/gh/manhattanincdev/mnhttn-utils@latest/js/plytix-swatches.min.js"></script>

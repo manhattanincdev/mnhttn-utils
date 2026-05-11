@@ -2,9 +2,9 @@
 
 A reusable swatch system for surfacing Plytix subvariant data as `data-attributes` across multiple themes.
 
-## 1. Global snippet
+## 1. Common snippet
 
-Place the following snippet before the closing `</body>` tag for every brand:
+Place the `mnhttn-plytix-swatch-script.liquid` snippet before the closing `</body>` tag for every brand. The contents of the snippets are as follows:
 
 ```
 {% comment %}Manhattan Custom; DO NOT DELETE{% endcomment %}
@@ -35,7 +35,7 @@ When updating a given branch, you can force jsDelivr to purge the cache by enter
 
 Theme: Stretch by Maestrooo
 
-`Line 200` of `snippets/option-value.liquid`
+`Line 176` of `snippets/option-value.liquid` add `{% render 'mnhttn-plytix-swatch-data' label: label, variant: variant %}`. The contents of the snippet are as follows:
 
 ```
 data-plytix-swatch="{{ label }}" {% if variant.metafields.plytix.hex_1 %}data-plytix-hex1="{{ variant.metafields.plytix.hex_1 }}"{% endif %} {% if variant.metafields.plytix.hex_2 %}data-plytix-hex2="{{ variant.metafields.plytix.hex_2 }}"{% endif %} {% if variant.metafields.plytix.swatch %}data-plytix-img="{{ variant.metafields.plytix.swatch }}"{% endif %}
