@@ -1,6 +1,6 @@
 # Manhattan Custom - Plytix Swatch Implementation
 
-A reusable swatch system for surfacing Plytix subvariant data as `data-attributes` across multiple themes.
+A reusable swatch system for surfacing Plytix subvariant data as `data-attributes` across multiple themes. If Plytix eventaully launches support for Metaobjects, that would be the preferable way of syncing color data.
 
 ## 1. Common snippet
 
