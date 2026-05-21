@@ -1,4 +1,4 @@
-# Manhattan Custom Plytix Swatch Implementation
+# Manhattan Custom - Plytix Swatch Implementation
 
 A reusable swatch system for surfacing Plytix subvariant data as `data-attributes` across multiple themes.
 
