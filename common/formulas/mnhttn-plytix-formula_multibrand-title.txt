@@ -1,0 +1,1 @@
+IF(NE($ATT.brand, "Kyodan"), CONCAT(TRIM($ATT.brand), " ", TRIM($LABEL)), TRIM($LABEL))

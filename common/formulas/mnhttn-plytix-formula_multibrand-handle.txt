@@ -1,0 +1,1 @@
+IF(ISBLANK($ATT.kyodan_canada_shopify_handle), "", IF(NE($ATT.brand, "Kyodan"), CONCAT(LOWER(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE($ATT.brand, "&", "and"), " ", "-"), ".", "")), "-", TRIM($ATT.kyodan_canada_shopify_handle)), TRIM($ATT.kyodan_canada_shopify_handle)))
